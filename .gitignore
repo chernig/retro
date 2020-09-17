@@ -1,0 +1,24 @@
+backend/backend/secret_config.py
+backend/*.sqlite3
+
+
+frontend/retro-main/node_modules
+frontend/retro-main/.pnp
+frontend/retro-main/.pnp.js
+
+# testing
+frontend/retro-main/coverage
+
+# production
+frontend/retro-main/build
+
+# misc
+frontend/retro-main/.DS_Store
+frontend/retro-main/.env.local
+frontend/retro-main/.env.development.local
+frontend/retro-main/.env.test.local
+frontend/retro-main/.env.production.local
+
+frontend/retro-main/npm-debug.log*
+frontend/retro-main/yarn-debug.log*
+frontend/retro-main/yarn-error.log*
