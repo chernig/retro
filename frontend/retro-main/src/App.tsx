@@ -1,11 +1,17 @@
 import React from 'react';
-import Note from './components/note/note';
+import NoteContainer from './components/noteContainer/noteContainer';
+import { Jumbotron } from 'react-bootstrap';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Note text="test" />
+      <Jumbotron className="mb-0">
+        <NoteContainer test={'atata'} />
+        <NoteContainer test={'atata'} />
+        <NoteContainer test={'atata'} />
+        <NoteContainer test={'atata'} />
+      </Jumbotron>
     </div>
   );
 }

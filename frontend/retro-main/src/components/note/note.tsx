@@ -1,16 +1,21 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-
-interface NoteProps {
+import { Card, Button } from 'react-bootstrap';
+import './note.css';
+export interface NoteProps {
   text: string;
 }
 
-function Note(props: NoteProps) {
+export function Note(props: NoteProps) {
   return (
-    <Card>
+    <Card bg={'light'}>
       <Card.Body>
-        <Card.Text>{props.text}</Card.Text>
+        <blockquote className="blockquote mb-0 card-body">
+          <p>{props.text}</p>
+        </blockquote>
       </Card.Body>
+      <Card.Footer>
+        <Button>Test</Button>
+      </Card.Footer>
     </Card>
   );
 }
