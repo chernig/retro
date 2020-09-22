@@ -5,5 +5,5 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
-    def validate_text(value):
+    def validate_text(self, value):
         return value

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { CardDeck, Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import axios from 'axios';
 import Note from '../note/note';
 import './noteContainer.css';
 
 interface containerProps {
-  test: string;
+  group: string;
 }
 
 interface note {
@@ -17,20 +17,21 @@ function NoteContainer(props: containerProps) {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/comments/').then((response) => {
-      setNotes(response.data);
-    });
-  }, []);
+    axios
+      .get('http://127.0.0.1:8000/api/comments/', {
+        params: { group: props.group }
+      })
+      .then((response) => {
+        setNotes(response.data);
+      });
+  }, [props.group]);
 
   return (
     <Col>
-      <CardDeck>
-        {notes.map((note: note) => (
-          <Row>
-            <Note key={note.id} text={note.text} />
-          </Row>
-        ))}
-      </CardDeck>
+      <p>{props.group}</p>
+      {notes.map((note: note) => (
+        <Note key={note.id} text={note.text} data-key={note.id} />
+      ))}
     </Col>
   );
 }

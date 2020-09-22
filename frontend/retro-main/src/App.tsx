@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <Jumbotron className="mb-0">
-        <NoteContainer test={'atata'} />
-        <NoteContainer test={'atata'} />
-        <NoteContainer test={'atata'} />
-        <NoteContainer test={'atata'} />
+        <NoteContainer group={'bad'} />
+        <NoteContainer group={'well'} />
+        <NoteContainer group={'improve'} />
+        <NoteContainer group={'action'} />
       </Jumbotron>
     </div>
   );
